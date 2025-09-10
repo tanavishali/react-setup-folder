@@ -1,16 +1,27 @@
-import { useState } from 'react'
+import React, { useState } from "react";
 
-import './App.css'
+function BgChanger() {
+  const  color=["red","blue","green","yellow","pink","purple","orange","black","white","gray"]; 
+  const [bgColor, setBgColor] = useState("white");
+  const changeBgColor = (color) => {
+    setBgColor(color);
 
-function App() {
-  const [count, setCount] = useState(0)
+  }
 
   return (
-    <>
-    <h1 className='bg-amber-600'>i am setup</h1>
-    <b className='text-amber-600'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ab recusandae ipsum nam voluptatibus quaerat dolorum esse beatae optio assumenda, minima modi, veritatis provident cum quasi reprehenderit libero reiciendis accusantium.</b>
-    </>
-  )
+  <>
+<ul>
+  {
+
+  color.map((item)=>(
+    <li key={item} style={{backgroundColor:bgColor}}>
+      <button onClick={()=>changeBgColor(item)}>{item}</button>
+    </li>
+  ))
+  }
+</ul>
+  </>
+  );
 }
 
-export default App
+export default BgChanger;
