@@ -8,7 +8,9 @@ function App() {
 
   return (
     <>
-    <h1 className='bg-amber-600'>i am setup</h1></>
+    <h1 className='bg-amber-600'>i am setup</h1>
+    <h3>i am child and try to puch in master</h3>
+    </>
   )
 }
 
